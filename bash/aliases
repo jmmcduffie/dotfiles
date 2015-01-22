@@ -1,0 +1,17 @@
+# bash
+alias path="echo $PATH | tr -s ':' '\n'"
+alias la="ls -A"
+alias ll="ls -lAt"
+alias lh="ls -lAht"
+alias e="$EDITOR"
+alias c="clear"
+alias r="source $HOME/.bashrc"
+
+# Git
+alias g="git"
+
+# Ruby/Rails
+alias b="bundle"
+alias be="bundle exec"
+alias rk="rake"
+alias s="rspec"

@@ -1,0 +1,9 @@
+# bash
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
+# Git
+function gr() {
+  cd "$(git rev-parse --show-toplevel)"
+}
