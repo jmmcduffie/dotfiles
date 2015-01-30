@@ -1,10 +1,19 @@
-# bash
-[[ -f $HOME/.bash/aliases ]] && source $HOME/.bash/aliases
-[[ -f $HOME/.bash/functions ]] && source $HOME/.bash/functions
-[[ -f $HOME/.bash/variables ]] && source $HOME/.bash/variables
+export EDITOR="vim"
+export PROMPT_COMMAND="__set_prompt"
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+# bash
+[[ -f $HOME/.bash/functions ]] && source $HOME/.bash/functions
+[[ -f $HOME/.bash/aliases ]] && source $HOME/.bash/aliases
+
+if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
+  source $(brew --prefix)/etc/bash_completion
+fi
+
+[[ -n `declare -f -F __git_complete` ]] && __git_complete g _git
+
+# postgres
+if [[ -d /Applications/Postgres.app/Contents/Versions/9.4/bin ]]; then
+  export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 fi
 
 # rbenv

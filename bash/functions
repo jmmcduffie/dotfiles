@@ -1,9 +1,21 @@
 # bash
+function __set_prompt() {
+  export PS1="\n\u:\w \e[0;35m$(rbenv version-name)\e[m\n→ "
+}
+
 function mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
 # Git
+function g() {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status
+  fi
+}
+
 function gr() {
   cd "$(git rev-parse --show-toplevel)"
 }
