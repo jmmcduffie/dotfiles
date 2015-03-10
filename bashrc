@@ -9,6 +9,13 @@ if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
   source $(brew --prefix)/etc/bash_completion
 fi
 
+# git
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+if [[ -f $(brew --prefix)/share/git-core/contrib/completion/git-prompt ]]; then
+  source $(brew --prefix)/share/git-core/contrib/completion/git-prompt
+fi
+
 [[ -n `declare -f -F __git_complete` ]] && __git_complete g _git
 
 # postgres
@@ -19,3 +26,8 @@ fi
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# heroku
+if [[ -d /usr/local/heroku/bin ]]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi

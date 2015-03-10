@@ -1,6 +1,16 @@
 # bash
 function __set_prompt() {
-  export PS1="\n\u:\w \e[0;35m$(rbenv version-name)\e[m\n→ "
+  export PS1="\n\u:\w"
+
+  if which rbenv > /dev/null; then
+    export PS1="$PS1 \e[0;35m$(rbenv version-name)"
+  fi
+
+  if [[ "$(declare -F __git_ps1)" ]]; then
+    export PS1="$PS1\e[0;36m$(__git_ps1 " %s")"
+  fi
+
+  export PS1="$PS1\e[m\n→ "
 }
 
 function mcd() {
@@ -10,7 +20,7 @@ function mcd() {
 # Git
 function g() {
   if [[ $# > 0 ]]; then
-    git $@
+    "git" "$@"
   else
     git status
   fi
