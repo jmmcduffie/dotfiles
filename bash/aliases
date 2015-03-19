@@ -6,10 +6,6 @@ alias e="$EDITOR"
 alias c="clear"
 alias r="source $HOME/.bashrc"
 
-# Git
-alias gdx="git diff $1 | gitx"
-alias gdsx="git diff --cached $1 | gitx"
-
 # Ruby/Rails
 alias b="bundle"
 alias be="bundle exec"

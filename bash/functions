@@ -29,3 +29,11 @@ function g() {
 function gr() {
   cd "$(git rev-parse --show-toplevel)"
 }
+
+function gdx() {
+  git diff "$@" | gitx
+}
+
+function gdsx() {
+  git diff --cached "$@" | gitx
+}
