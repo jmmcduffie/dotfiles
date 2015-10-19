@@ -1,5 +1,9 @@
 # bash
 function __set_prompt() {
+  if [ "$TERM_PROGRAM" == "Apple_Terminal" ] && [ -z "$INSIDE_EMACS" ]; then
+    update_terminal_cwd
+  fi
+
   export PS1="\n\u:\w"
 
   if which rbenv > /dev/null; then
