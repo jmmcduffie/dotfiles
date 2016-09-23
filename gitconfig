@@ -8,7 +8,8 @@
     unstage = reset HEAD
     unwip = reset --soft HEAD^
     up = !git fetch origin && git rebase origin/master
-    yolo = push -f
+    yolo = push --force-with-lease
+	psu = push
 [branch]
     autosetuprebase = always
 [color]
