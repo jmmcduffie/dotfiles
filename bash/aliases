@@ -9,10 +9,3 @@ alias r="source $HOME/.bashrc"
 # Ruby/Rails
 alias b="bundle"
 alias be="bundle exec"
-alias rk="rake"
-alias s="rspec"
-
-# SVN
-alias svm=svn
-alias snv=svn
-alias svns="svn stat --ignore-externals | grep -v X"
